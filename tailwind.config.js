@@ -1,9 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: [
+    './src/**/*.{js,jsx,ts,tsx}', // Path to your components
+    './public/index.html', // Path to your HTML files
+  ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        // Add your custom colors or extend the existing ones
+        customBlue: '#5483b3',
+        customGray: '#7da0ca',
+        // ...other color variations
+      },
+    },
   },
-  plugins: [],
-}
-
+  plugins: [
+    // Include any additional plugins here if needed
+    // Example: require('@tailwindcss/forms'),
+  ],
+};
