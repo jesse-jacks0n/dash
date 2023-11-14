@@ -34,7 +34,7 @@ const LoginPage = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <div className="bg-white p-8 rounded shadow-md w-full sm:w-80 lg:w-96 sm:rounded-lg lg:rounded-xl">
+            <div className="bg-white p-8 rounded shadow-md w-full sm:w-80 mt-4 m-4 lg:w-96 sm:rounded-lg lg:rounded-xl">
                 <h1 className="text-3xl mb-6 text-center">Welcome</h1>
                 <form className="space-y-4">
                     <div>
@@ -55,8 +55,11 @@ const LoginPage = () => {
                             className="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
                         />
                     </div>
-                    <div className="flex items-center justify-between">
-                        <a href="#!" className="text-blue-500 hover:underline">Forgot password?</a>
+                    <div className="flex justify-end">
+                        <a href="#!" className="text-blue-500 text-sm">Forgot password?</a>
+
+                    </div>
+                    <div className={"flex justify-center"}>
                         <button className="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
                                 onClick={onLogin}
                                 disabled={loading}
@@ -65,7 +68,7 @@ const LoginPage = () => {
                     </div>
                 </form>
                 <div className="mt-6 text-center ">
-                    <p className="text-xs sm:text-base ">Don't have an account?
+                    <p className="text-sm sm:text-base text-gray-600 ">Don't have an account?
                         <button onClick={goToSignup}
                                 className="hover:text-blue-700 px-2 hover:bg-transparent hover:border-none text-blue-500">
                             Signup

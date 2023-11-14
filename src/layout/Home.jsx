@@ -10,15 +10,7 @@ export default function Home(){
     const navigate = useNavigate();
     const [activeButton, setActiveButton] = useState('dashboard');
 
-    const handleLogout = () => {
-        signOut(auth).then(() => {
-            // Sign-out successful.
-            navigate("/");
-            console.log("Signed out successfully")
-        }).catch((error) => {
-            // An error happened.
-        });
-    }
+
     useEffect(()=>{
         onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -39,17 +31,13 @@ export default function Home(){
         setActiveButton(buttonName);
     };
     return (
-        <div className="bg-gray-100 h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-gray scrollbar-track-white ">
+        <div className="bg-gray-50 h-screen relative overflow-y-scroll scrollbar-thin scrollbar-thumb-gray scrollbar-track-white ">
             <Navbar
                 activeButton={activeButton}
                 handleButtonClick={handleButtonClick}
             />
             <BodyContent activeButton={activeButton}/>
-            <div>
-                <button onClick={handleLogout}>
-                    Logout
-                </button>
-            </div>
+
         </div>
     );
 }
